@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebStudio</title>
+    <script src="js/main.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,15 +25,16 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media.css" />
   </head>
   <body>
     <!-- HEADER -->
     <header class="header">
       <div class="container">
+        <a class="header-logo logo" href="./index.html"
+          ><span class="accent">Web</span>Studio</a
+        >
         <nav class="header-navigation">
-          <a class="header-logo logo" href="./index.html"
-            ><span class="accent">Web</span>Studio</a
-          >
           <ul class="header-nav">
             <li class="header-nav-item">
               <a class="header-nav-link" href="" target="_blank">Studio</a>
@@ -59,15 +61,121 @@
             </li>
           </ul>
         </address>
+
+        <button class="menu-open-btn" id="open-menu-btn">
+          <svg class="open-btn-icon" width="16" height="14">
+            <use href="./images/menu-mob-open.svg#icon-menu-mob-open"></use>
+          </svg>
+        </button>
+      </div>
+
+      <div class="menu-modal-mob" id="mob-menu">
+        <button
+          type="button"
+          class="modal-button menu-close-btn"
+          id="close-menu-btn"
+        >
+          <svg class="modal-close-btn" width="8" height="8">
+            <use
+              href="./images/modal/modal-icons-sprite.svg#icon-close-btn"
+            ></use>
+          </svg>
+        </button>
+
+        <nav class="header-mob-navigation">
+          <ul class="header-mob-nav">
+            <li class="header-mob-nav-item">
+              <a class="header-mob-nav-link" href="" target="_blank">Studio</a>
+            </li>
+            <li class="header-mob-nav-item">
+              <a class="header-mob-nav-link" href="" target="_blank"
+                >Portfolio</a
+              >
+            </li>
+            <li class="header-mob-nav-item">
+              <a class="header-mob-nav-link" href="" target="_blank"
+                >Contacts</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="modal-contacts">
+          <address class="header-mob-address">
+            <ul class="header-mob-address-list">
+              <li class="header-mob-address-item">
+                <a
+                  class="header-mob-address-link"
+                  href="mailto:info@devstudio.com"
+                  >info@devstudio.com</a
+                >
+              </li>
+              <li class="header-mob-address-item">
+                <a class="header-mob-address-link" href="tel:110001111111"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+            </ul>
+          </address>
+
+          <ul class="team-soc-list footer-soc-list">
+            <li class="team-soc-item footer-soc-item">
+              <a href="" rel="noopener noreferrer nofollow">
+                <svg
+                  class="team-soc-icon footer-soc-icon"
+                  width="16"
+                  height="16"
+                >
+                  <use href="./images/soc/soc-sprites.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="team-soc-item footer-soc-item">
+              <a href="" rel="noopener noreferrer nofollow">
+                <svg
+                  class="team-soc-icon footer-soc-icon"
+                  width="16"
+                  height="16"
+                >
+                  <use href="./images/soc/soc-sprites.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="team-soc-item footer-soc-item">
+              <a href="" rel="noopener noreferrer nofollow">
+                <svg
+                  class="team-soc-icon footer-soc-icon"
+                  width="16"
+                  height="16"
+                >
+                  <use href="./images/soc/soc-sprites.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="team-soc-item footer-soc-item">
+              <a href="" rel="noopener noreferrer nofollow">
+                <svg
+                  class="team-soc-icon footer-soc-icon"
+                  width="16"
+                  height="16"
+                >
+                  <use href="./images/soc/soc-sprites.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
-    <main>
+    <main class="">
       <!-- HERO -->
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="hero-btn" type="button">Order Service</button>
+          <button class="hero-btn" type="button" id="order">
+            Order Service
+          </button>
         </div>
       </section>
 
@@ -142,11 +250,34 @@
           <h2 class="team-title">Our Team</h2>
           <ul class="team-list">
             <li class="team-item">
-              <img
-                class="team-img"
-                src="./images/team/team-1.jpg"
-                alt="Mark Guerrero"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/desk/team-1-1x-desk.jpg 1x,
+                    ./images/team/desk/team-1-2x-desk.jpg 2x
+                  "
+                  media="(min-width: 1440px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/tab/team-1-1x-tab.jpg 1x,
+                    ./images/team/tab/team-1-2x-tab.jpg 2x
+                  "
+                  media="(min-width: 767px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/mob/team-1-1x-mob.jpg 1x,
+                    ./images/team/mob/team-1-2x-mob.jpg 2x
+                  "
+                  media="(min-width: 319px)"
+                />
+                <img
+                  class="team-img"
+                  src="./images/team/mob/team-1-1x-mob.jpg"
+                  alt="Mark Guerrero"
+                />
+              </picture>
               <div class="team-text">
                 <h3 class="team-name">Mark Guerrero</h3>
                 <p class="team-role">Product Designer</p>
@@ -185,11 +316,34 @@
               </div>
             </li>
             <li class="team-item">
-              <img
-                class="team-img"
-                src="./images/team/team-2.jpg"
-                alt="Tom Ford"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/desk/team-2-1x-desk.jpg 1x,
+                    ./images/team/desk/team-2-2x-desk.jpg 2x
+                  "
+                  media="(min-width: 1440px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/tab/team-2-1x-tab.jpg 1x,
+                    ./images/team/tab/team-2-2x-tab.jpg 2x
+                  "
+                  media="(min-width: 767px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/mob/team-2-1x-mob.jpg 1x,
+                    ./images/team/mob/team-2-2x-mob.jpg 2x
+                  "
+                  media="(min-width: 319px)"
+                />
+                <img
+                  class="team-img"
+                  src="./images/team/mob/team-2-1x-mob.jpg"
+                  alt="Mark Guerrero"
+                />
+              </picture>
               <div class="team-text">
                 <h3 class="team-name">Tom Ford</h3>
                 <p class="team-role">Frontend Developer</p>
@@ -228,11 +382,34 @@
               </div>
             </li>
             <li class="team-item">
-              <img
-                class="team-img"
-                src="./images/team/team-3.jpg"
-                alt="Camila Garcia"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/desk/team-3-1x-desk.jpg 1x,
+                    ./images/team/desk/team-3-2x-desk.jpg 2x
+                  "
+                  media="(min-width: 1440px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/tab/team-3-1x-tab.jpg 1x,
+                    ./images/team/tab/team-3-2x-tab.jpg 2x
+                  "
+                  media="(min-width: 767px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/mob/team-3-1x-mob.jpg 1x,
+                    ./images/team/mob/team-3-2x-mob.jpg 2x
+                  "
+                  media="(min-width: 319px)"
+                />
+                <img
+                  class="team-img"
+                  src="./images/team/mob/team-3-1x-mob.jpg"
+                  alt="Mark Guerrero"
+                />
+              </picture>
               <div class="team-text">
                 <h3 class="team-name">Camila Garcia</h3>
                 <p class="team-role">Marketing</p>
@@ -271,11 +448,34 @@
               </div>
             </li>
             <li class="team-item">
-              <img
-                class="team-img"
-                src="./images/team/team-4.jpg"
-                alt="Daniel Wilson"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/desk/team-4-1x-desk.jpg 1x,
+                    ./images/team/desk/team-4-2x-desk.jpg 2x
+                  "
+                  media="(min-width: 1440px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/tab/team-4-1x-tab.jpg 1x,
+                    ./images/team/tab/team-4-2x-tab.jpg 2x
+                  "
+                  media="(min-width: 767px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/mob/team-4-1x-mob.jpg 1x,
+                    ./images/team/mob/team-4-2x-mob.jpg 2x
+                  "
+                  media="(min-width: 319px)"
+                />
+                <img
+                  class="team-img"
+                  src="./images/team/mob/team-4-1x-mob.jpg"
+                  alt="Mark Guerrero"
+                />
+              </picture>
               <div class="team-text">
                 <h3 class="team-name">Daniel Wilson</h3>
                 <p class="team-role">UI Designer</p>
@@ -325,11 +525,32 @@
           <ul class="portfolio-list">
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/portfolio/portfolio-1.jpg"
-                  alt="Project card"
-                  class="portfolio-img"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/desktop/portfolio-1-1x-desk.jpg 1x,
+                      ./images/portfolio/desktop/portfolio-1-2x-desk.jpg 2x
+                    "
+                    media="(min-width: 1439px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/tab/portfolio-1-1x-tab.jpg 1x,
+                      ./images/portfolio/tab/portfolio-1-2x-tab.jpg 2x
+                    "
+                    media="(min-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/mob/portfolio-1-mob.jpg    1x,
+                      ./images/portfolio/mob/portfolio-1-2x-mob.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/portfolio/mob/portfolio-1-mob.jpg"
+                    alt="Portfolio project 1"
+                  />
+                </picture>
                 <p class="portfolio-wrapper-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -343,11 +564,32 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/portfolio/portfolio-2.jpg"
-                  alt="Project card"
-                  class="portfolio-img"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/desktop/portfolio-2-1x-desk.jpg 1x,
+                      ./images/portfolio/desktop/portfolio-2-2x-desk.jpg 2x
+                    "
+                    media="(min-width: 1439px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/tab/portfolio-2-1x-tab.jpg 1x,
+                      ./images/portfolio/tab/portfolio-2-2x-tab.jpg 2x
+                    "
+                    media="(min-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/mob/portfolio-2-mob.jpg    1x,
+                      ./images/portfolio/mob/portfolio-2-2x-mob.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/portfolio/mob/portfolio-2-mob.jpg"
+                    alt="Portfolio project 1"
+                  />
+                </picture>
                 <p class="portfolio-wrapper-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -361,11 +603,32 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/portfolio/portfolio-3.jpg"
-                  alt="Project card"
-                  class="portfolio-img"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/desktop/portfolio-3-1x-desk.jpg 1x,
+                      ./images/portfolio/desktop/portfolio-3-2x-desk.jpg 2x
+                    "
+                    media="(min-width: 1439px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/tab/portfolio-3-1x-tab.jpg 1x,
+                      ./images/portfolio/tab/portfolio-3-2x-tab.jpg 2x
+                    "
+                    media="(min-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/mob/portfolio-3-mob.jpg    1x,
+                      ./images/portfolio/mob/portfolio-3-2x-mob.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/portfolio/mob/portfolio-3-mob.jpg"
+                    alt="Portfolio project 1"
+                  />
+                </picture>
                 <p class="portfolio-wrapper-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -379,11 +642,32 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/portfolio/portfolio-4.jpg"
-                  alt="Project card"
-                  class="portfolio-img"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/desktop/portfolio-4-1x-desk.jpg 1x,
+                      ./images/portfolio/desktop/portfolio-4-2x-desk.jpg 2x
+                    "
+                    media="(min-width: 1439px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/tab/portfolio-4-1x-tab.jpg 1x,
+                      ./images/portfolio/tab/portfolio-4-2x-tab.jpg 2x
+                    "
+                    media="(min-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/mob/portfolio-4-mob.jpg    1x,
+                      ./images/portfolio/mob/portfolio-4-2x-mob.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/portfolio/mob/portfolio-4-mob.jpg"
+                    alt="Portfolio project 1"
+                  />
+                </picture>
                 <p class="portfolio-wrapper-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -397,11 +681,32 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/portfolio/portfolio-5.jpg"
-                  alt="Project card"
-                  class="portfolio-img"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/desktop/portfolio-5-1x-desk.jpg 1x,
+                      ./images/portfolio/desktop/portfolio-5-2x-desk.jpg 2x
+                    "
+                    media="(min-width: 1439px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/tab/portfolio-5-1x-tab.jpg 1x,
+                      ./images/portfolio/tab/portfolio-5-2x-tab.jpg 2x
+                    "
+                    media="(min-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/mob/portfolio-5-mob.jpg    1x,
+                      ./images/portfolio/mob/portfolio-5-2x-mob.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/portfolio/mob/portfolio-5-mob.jpg"
+                    alt="Portfolio project 1"
+                  />
+                </picture>
                 <p class="portfolio-wrapper-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -415,11 +720,32 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/portfolio/portfolio-6.jpg"
-                  alt="Project card"
-                  class="portfolio-img"
-                />
+                <picture>
+                  <source
+                    srcset="
+                      ./images/portfolio/desktop/portfolio-6-1x-desk.jpg 1x,
+                      ./images/portfolio/desktop/portfolio-6-2x-desk.jpg 2x
+                    "
+                    media="(min-width: 1439px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/tab/portfolio-6-1x-tab.jpg 1x,
+                      ./images/portfolio/tab/portfolio-6-2x-tab.jpg 2x
+                    "
+                    media="(min-width: 767px)"
+                  />
+                  <source
+                    srcset="
+                      ./images/portfolio/mob/portfolio-6-mob.jpg    1x,
+                      ./images/portfolio/mob/portfolio-6-2x-mob.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/portfolio/mob/portfolio-6-mob.jpg"
+                    alt="Portfolio project 1"
+                  />
+                </picture>
                 <p class="portfolio-wrapper-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -439,63 +765,65 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-info">
-          <a class="footer-logo logo" href="./index.html"
-            ><span class="accent">Web</span>Studio</a
-          >
-          <p class="footer-text">
-            Increase the flow of customers and sales for your business with
-            digital marketing & growth solutions.
-          </p>
-        </div>
-        <div class="footer-soc">
-          <h3 class="footer-soc-sub">Social media</h3>
-          <ul class="team-soc-list footer-soc-list">
-            <li class="team-soc-item footer-soc-item">
-              <a href="" rel="noopener noreferrer nofollow">
-                <svg
-                  class="team-soc-icon footer-soc-icon"
-                  width="16"
-                  height="16"
-                >
-                  <use href="./images/soc/soc-sprites.svg#instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="team-soc-item footer-soc-item">
-              <a href="" rel="noopener noreferrer nofollow">
-                <svg
-                  class="team-soc-icon footer-soc-icon"
-                  width="16"
-                  height="16"
-                >
-                  <use href="./images/soc/soc-sprites.svg#twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="team-soc-item footer-soc-item">
-              <a href="" rel="noopener noreferrer nofollow">
-                <svg
-                  class="team-soc-icon footer-soc-icon"
-                  width="16"
-                  height="16"
-                >
-                  <use href="./images/soc/soc-sprites.svg#facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="team-soc-item footer-soc-item">
-              <a href="" rel="noopener noreferrer nofollow">
-                <svg
-                  class="team-soc-icon footer-soc-icon"
-                  width="16"
-                  height="16"
-                >
-                  <use href="./images/soc/soc-sprites.svg#linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+        <div class="footer-top">
+          <div class="footer-info">
+            <a class="logo footer-logo" href="./index.html"
+              ><span class="accent">Web</span>Studio</a
+            >
+            <p class="footer-text">
+              Increase the flow of customers and sales for your business with
+              digital marketing & growth solutions.
+            </p>
+          </div>
+          <div class="footer-soc">
+            <h3 class="footer-soc-sub">Social media</h3>
+            <ul class="team-soc-list footer-soc-list">
+              <li class="team-soc-item footer-soc-item">
+                <a href="" rel="noopener noreferrer nofollow">
+                  <svg
+                    class="team-soc-icon footer-soc-icon"
+                    width="16"
+                    height="16"
+                  >
+                    <use href="./images/soc/soc-sprites.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team-soc-item footer-soc-item">
+                <a href="" rel="noopener noreferrer nofollow">
+                  <svg
+                    class="team-soc-icon footer-soc-icon"
+                    width="16"
+                    height="16"
+                  >
+                    <use href="./images/soc/soc-sprites.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team-soc-item footer-soc-item">
+                <a href="" rel="noopener noreferrer nofollow">
+                  <svg
+                    class="team-soc-icon footer-soc-icon"
+                    width="16"
+                    height="16"
+                  >
+                    <use href="./images/soc/soc-sprites.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team-soc-item footer-soc-item">
+                <a href="" rel="noopener noreferrer nofollow">
+                  <svg
+                    class="team-soc-icon footer-soc-icon"
+                    width="16"
+                    height="16"
+                  >
+                    <use href="./images/soc/soc-sprites.svg#linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="footer-form-sub">
@@ -520,9 +848,11 @@
       </div>
     </footer>
 
-    <div class="dashboard is-open">
+    <!-- ============ MODAL ============ -->
+
+    <div class="dashboard" id="dashboard">
       <div class="modal">
-        <button type="button" class="modal-button">
+        <button type="button" class="modal-button" id="close-dashboard">
           <svg class="modal-close-btn" width="8" height="8">
             <use
               href="./images/modal/modal-icons-sprite.svg#icon-close-btn"
@@ -589,8 +919,10 @@
                   <use href="./images/modal/check.svg#icon-check"></use>
                 </svg>
               </span>
-              I accept the terms and conditions of the&nbsp;
-              <a href="" class="modal-policy-link">Privacy Policy</a>
+              <span class="label-checkbox-text">
+                I accept the terms and conditions of the&nbsp;
+                <a href="#" class="modal-policy-link">Privacy Policy</a>
+              </span>
             </label>
           </div>
 
